@@ -30,15 +30,6 @@ class backhub::user {
     require => File["/home/backhub"],
   }
 
-# Create authorized_keys file
- file { "/home/backhub/.ssh/authorized_keys":
-    ensure  => present,
-    owner   => "backhub",
-    group   => "backhub",
-    mode    => '0600',
-    require => File["/home/backhub/.ssh"],
-    }
-
 # Add private key to be able to scp to switches
   file { "/home/backhub/.ssh/id_rsa":
     owner   => "backhub",
