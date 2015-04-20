@@ -51,7 +51,7 @@ class backhub (
   } 
 
 # Create group
-  group { $backhub: 
+  group { backhub: 
     ensure => present, 
   }
 
