@@ -40,9 +40,39 @@ class backhub {
   # Create directory to store files
   file { '/data':
     ensure => directory,
-    mode   => 0640,
   }
 
-  
+  # Create user to push/pull configs
+  user { backhub:
+    managehome => present
+    password   => 'password'
+  } 
+
+# Create .ssh directory
+  file { "/home/backhub/.ssh":
+    ensure  => directory,
+    owner   => backhub,
+    group   => backhub,
+    mode    => '0600',
+    require => File["/home/backhub"],
+  }
+
+# Create authorized_keys directory
+ file { "/home/backhub/.ssh/authorized_keys":
+    ensure  => present,
+    owner   => backhub,
+    group   => backhub,
+    mode    => '0600',
+    require => File["/home/backhub/.ssh"],
+    }
+
+# Add public key
+  ssh_authorized_key { $email:
+    ensure  => present,
+    user    => backhub,
+    type    => ssh-rsa,
+    key     => ,
+    require => File["/home/backhub/.ssh/authorized_keys"],
+  }
 
 }
