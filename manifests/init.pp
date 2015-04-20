@@ -67,7 +67,7 @@ class backhub {
     }
 
 # Add public key
-  ssh_authorized_key { $email:
+  ssh_authorized_key { backhub:
     ensure  => present,
     user    => backhub,
     type    => ssh-rsa,
