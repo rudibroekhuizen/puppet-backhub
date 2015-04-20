@@ -1,6 +1,6 @@
-# == Define: backhub::scp
+# == Define: backhub::defines::scp
 #
-define backhub::scp (
+define backhub::defines::scp (
   $hostorip,
   $source,
   #$repeat,
