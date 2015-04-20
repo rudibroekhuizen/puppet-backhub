@@ -1,7 +1,6 @@
 # == Define: backhub::defines::scp
 #
 define backhub::defines::scp (
-  $hostorip,
   $source,
   #$repeat,
   ) {
@@ -12,7 +11,7 @@ define backhub::defines::scp (
   #}
   
   # Get configs with scp using geoffwilliams/scp module
-  scp { $hostorip:
+  scp { $title:
     ensure => present,
     source => $source,
     #repeat => $schedule,
