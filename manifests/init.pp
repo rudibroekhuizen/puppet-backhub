@@ -50,6 +50,20 @@ class backhub (
     password   => 'password'
   } 
 
+# Create group
+  group { $backhub: 
+    ensure => present, 
+  }
+
+# Create homedirectory
+  file { "/home/backhub": 
+    ensure  => directory, 
+    owner   => "backhub", 
+    group   => "backhub", 
+    mode    => '0700',
+    require => Group["backhub"],
+  } 
+
 # Create .ssh directory
   file { "/home/backhub/.ssh":
     ensure  => directory,
