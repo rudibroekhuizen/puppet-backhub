@@ -37,5 +37,12 @@
 #
 class backhub {
 
+  # Create directory to store files
+  file { '/data':
+    ensure => directory,
+    mode   => 0640,
+  }
+
+  
 
 }
