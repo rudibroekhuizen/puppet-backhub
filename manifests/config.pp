@@ -2,7 +2,7 @@
 #
 class backhub::config {
 
-# Setup logrotate on the config files
+# Setup logrotate using module yo61/logrotate
   logrotate::rule { 'logrotate':
     path         => '/home/backhub/*',
     rotate       => 5,
