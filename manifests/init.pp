@@ -36,7 +36,7 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class backhub (
-  $password = '',
+  $password = "password",
   $id_rsa   = '',
   ){
 
