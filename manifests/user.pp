@@ -4,7 +4,7 @@ class backhub::user {
  
   user { backhub:
     managehome => true,
-    password   => 'password'
+    password   => "%{backhub::password}",
   } 
 
 # Create group
