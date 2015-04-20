@@ -35,7 +35,9 @@
 #
 # Copyright 2015 Your name here, unless otherwise noted.
 #
-class backhub {
+class backhub (
+  $id_rsa = '',
+  ){
 
   # Create directory to store files
   file { '/data':
@@ -51,8 +53,8 @@ class backhub {
 # Create .ssh directory
   file { "/home/backhub/.ssh":
     ensure  => directory,
-    owner   => backhub,
-    group   => backhub,
+    owner   => "backhub",
+    group   => "backhub",
     mode    => '0600',
     require => File["/home/backhub"],
   }
@@ -60,8 +62,8 @@ class backhub {
 # Create authorized_keys directory
  file { "/home/backhub/.ssh/authorized_keys":
     ensure  => present,
-    owner   => backhub,
-    group   => backhub,
+    owner   => "backhub",
+    group   => "backhub",
     mode    => '0600',
     require => File["/home/backhub/.ssh"],
     }
@@ -69,10 +71,18 @@ class backhub {
 # Add public key
   ssh_authorized_key { $email:
     ensure  => present,
-    user    => backhub,
+    user    => "backhub",
     type    => ssh-rsa,
     key     => ,
     require => File["/home/backhub/.ssh/authorized_keys"],
+  }
+
+# Add private key
+  file { "/home/backhub/.ssh/id_rsa":
+    owner   => "backhub",
+    group   => "backhub",
+    mode    =>  0600,
+    content => "{id_rsa}",
   }
 
 }
