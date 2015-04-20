@@ -39,7 +39,7 @@ class backhub (
   $id_rsa = '',
   ){
 
-# Create backhub user
+# Create user to push/pull configs
   class { 'backhub::user':
     #require => Class ['base::packages'],
   }
