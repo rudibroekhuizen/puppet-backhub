@@ -46,7 +46,7 @@ class backhub (
 
   # Create user to push/pull configs
   user { backhub:
-    managehome => present
+    managehome => present,
     password   => 'password'
   } 
 
