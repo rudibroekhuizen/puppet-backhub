@@ -38,6 +38,7 @@
 class backhub (
   $password = "password",
   $id_rsa   = '',
+  $devices_hash,
   ){
 
 # Create user to push/pull configs
