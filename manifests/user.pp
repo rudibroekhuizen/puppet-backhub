@@ -30,7 +30,7 @@ class backhub::user {
     require => File["/home/backhub"],
   }
 
-# Create authorized_keys directory
+# Create authorized_keys file
  file { "/home/backhub/.ssh/authorized_keys":
     ensure  => present,
     owner   => "backhub",
