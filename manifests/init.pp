@@ -36,7 +36,8 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class backhub (
-  $id_rsa = '',
+  $password = '',
+  $id_rsa   = '',
   ){
 
 # Create user to push/pull configs
