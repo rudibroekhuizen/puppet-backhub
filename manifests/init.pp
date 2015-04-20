@@ -42,7 +42,11 @@ class backhub (
 
 # Create user to push/pull configs
   class { 'backhub::user':
-    #require => Class ['base::packages'],
+  }
+
+# Other configurations
+  class { 'backhub::config':
+#   require => Class ['base::user'],
   }
 
 }
