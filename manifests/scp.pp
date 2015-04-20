@@ -2,7 +2,7 @@
 #
 class backhub::scp {
 
-  create_resources('backhub::defines::scp', $backhub::devices_hash)
+  create_resources('backhub::defines::scp', $backhub::scp_hash)
   
 }
 
