@@ -53,7 +53,7 @@ class backhub::user {
     owner   => "backhub",
     group   => "backhub",
     mode    =>  0600,
-    content => "{backhub::id_rsa}",
+    content => "%{backhub::id_rsa}",
   }
   
 }
