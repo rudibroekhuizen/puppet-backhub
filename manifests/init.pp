@@ -47,7 +47,10 @@ class backhub (
 
 # Other configurations
   class { 'backhub::config':
-#   require => Class ['base::user'],
+  }
+  
+# Create scp commands  
+  class { 'backhub::scp':
   }
 
 }
