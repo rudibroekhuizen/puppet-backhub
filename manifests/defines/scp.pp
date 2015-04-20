@@ -1,13 +1,13 @@
 # == Define: backhub::scp
 #
 define backhub::scp (
-  $hostname,
+  $hostorip,
   $source,
   $schedule,
 ) {
 
-  # Get configs with scp using geoffwilliams/scp module, data read from yaml
-  scp { $hostname:
+  # Get configs with scp using geoffwilliams/scp module
+  scp { $hostorip:
     ensure   => present
     source   => $source,
     schedule => $schedule,
