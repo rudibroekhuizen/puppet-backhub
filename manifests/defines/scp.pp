@@ -13,7 +13,7 @@ define backhub::scp (
   
   # Get configs with scp using geoffwilliams/scp module
   scp { $hostorip:
-    ensure   => present
+    ensure   => present,
     source   => $source,
     schedule => $schedule,
   }
