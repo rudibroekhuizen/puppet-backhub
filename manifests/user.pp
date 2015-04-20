@@ -2,7 +2,6 @@
 #
 class backhub::user {
  
-# Create user to push/pull configs
   user { backhub:
     managehome => true,
     password   => 'password'
