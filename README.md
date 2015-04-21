@@ -19,13 +19,7 @@ Collect data from devices that cannot run a backup client, like switches, router
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+The main goal of this module is to pull configuration files from devices. It uses ssh keys and scp to do that. Create a keypair and upload the public key to your device. Use hiera of the Foreman to set the private key parameter (id_rda).
 
 ## Setup
 
