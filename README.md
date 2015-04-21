@@ -15,9 +15,7 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+Collect data from devices that cannot run a backup client, like switches, routers, firewall, ASA's, UPS's, PDU's. Tested on Ubuntu 14.04 with Puppet 3.7.4.
 
 ## Module Description
 
