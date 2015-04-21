@@ -34,16 +34,16 @@ class backhub::user {
   file { "/home/backhub/.ssh/id_rsa":
     owner   => "backhub",
     group   => "backhub",
-    mode    =>  0600,
-    content => "%{backhub::id_rsa}",
+    mode    => 0600,
+    content => $backhub::id_rsa,
   }
   
   # Add private key to root account to be able to scp to switches with scp puppet module
   file { "/home/.ssh/id_rsa":
     owner   => "backhub",
     group   => "backhub",
-    mode    =>  0600,
-    content => %{backhub::id_rsa},
+    mode    => 0600,
+    content => $backhub::id_rsa,
   }
   
 }
