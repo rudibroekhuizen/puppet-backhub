@@ -30,12 +30,20 @@ class backhub::user {
     require => File["/home/backhub"],
   }
 
-# Add private key to be able to scp to switches
+# Add private key to backhub account to be able to scp to switches
   file { "/home/backhub/.ssh/id_rsa":
     owner   => "backhub",
     group   => "backhub",
     mode    =>  0600,
     content => "%{backhub::id_rsa}",
+  }
+  
+  # Add private key to root account to be able to scp to switches with scp puppet module
+  file { "/home/.ssh/id_rsa":
+    owner   => "backhub",
+    group   => "backhub",
+    mode    =>  0600,
+    content => %{backhub::id_rsa},
   }
   
 }
