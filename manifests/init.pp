@@ -36,8 +36,8 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class backhub (
-  $password = "password",
-  $id_rsa   = '',
+  $password,
+  $id_rsa,
   $scp_hash,
   ){
 
