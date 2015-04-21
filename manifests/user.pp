@@ -17,7 +17,7 @@ class backhub::user {
     ensure  => directory, 
     owner   => "backhub", 
     group   => "backhub", 
-    mode    => '0700',
+    mode    => 0700,
     require => Group["backhub"],
   } 
 
@@ -26,7 +26,7 @@ class backhub::user {
     ensure  => directory,
     owner   => "backhub",
     group   => "backhub",
-    mode    => '0600',
+    mode    => 0600,
     require => File["/home/backhub"],
   }
 
