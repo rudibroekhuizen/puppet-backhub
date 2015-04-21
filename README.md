@@ -19,7 +19,7 @@ Collect data from devices that cannot run a backup client, like switches, router
 
 ## Module Description
 
-The main goal of this module is to pull configuration files from devices. It uses ssh keys and scp to do that. Create a keypair and upload the public key to your device. Use hiera of the Foreman to set the private key parameter (id_rda).
+The main goal of this module is to pull configuration files from devices. It uses ssh keys and scp to do that. Create a keypair and upload the public key to your device. Use hiera of the Foreman to set the private key parameter (id_rda). If your device doesn't support ssh keys, you can use the backhub user to push configs to your backhub server.
 
 ## Setup
 
