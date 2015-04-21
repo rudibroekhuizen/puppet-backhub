@@ -2,6 +2,7 @@
 #
 class backhub::user {
  
+ # Create user
   user { backhub:
     managehome => true,
     password   => $backhub::password,
@@ -30,7 +31,7 @@ class backhub::user {
     require => File["/home/backhub"],
   }
 
-# Add private key to backhub account to be able to scp to switches
+# Add private key to backhub account to be able to scp to devices
   file { "/home/backhub/.ssh/id_rsa":
     owner   => "backhub",
     group   => "backhub",
@@ -38,7 +39,7 @@ class backhub::user {
     content => $backhub::id_rsa,
   }
   
-  # Add private key to root account to be able to scp to switches with scp puppet module
+  # Add private key to root account to be able to scp to devices with scp puppet module
   file { "/root/.ssh/id_rsa":
     owner   => "backhub",
     group   => "backhub",
