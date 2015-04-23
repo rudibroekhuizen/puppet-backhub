@@ -36,9 +36,9 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class backhub (
-  $password,
-  $id_rsa,
-  $scp_hash,
+  $password = undef,
+  $id_rsa   = undef,
+  $scp_hash = undef,
   ){
 
 # Create user to push/pull configs
