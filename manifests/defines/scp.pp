@@ -1,9 +1,12 @@
 # == Define: backhub::defines::scp
 #
 define backhub::defines::scp (
+  $save_as,
   $source,
   $repeat,
   ) {
+  
+$timestamp = strftime("%Y%m%d%H%M")
 
 # Define schedule: run everynight between 2 and 4 am
   schedule { 'everyday':
@@ -15,6 +18,7 @@ define backhub::defines::scp (
   scp { $title:
     ensure   => present,
     source   => $source,
+    name     => "/home/backhub/${timestamp}_${title}_${save_as}",
     schedule => $repeat,
   }
   
