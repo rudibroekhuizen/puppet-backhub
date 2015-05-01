@@ -14,9 +14,7 @@ $timestamp = strftime("%Y%m%d%H%M")
     range  => "2-4",
     repeat => 1
   }
-  
-  notice($run)
-  
+
 # Get configs with scp using geoffwilliams/scp module
   scp { $title:
     ensure   => present,
