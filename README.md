@@ -30,7 +30,7 @@ The main goal of this module is to pull configuration files from devices. It use
 * This is a great place to stick any warnings.
 * Can be in list or paragraph form.
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements
 
 * yo61/logrotate
 * geoffwilliams/scp
