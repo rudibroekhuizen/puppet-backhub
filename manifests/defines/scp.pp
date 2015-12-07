@@ -5,13 +5,13 @@ define backhub::defines::scp (
   $source,
   $run,
   ) {
-  
-$timestamp = strftime("%Y%m%d%H%M")
+
+$timestamp = strftime('%Y%m%d%H%M')
 
 # Define schedule: run everynight between 2 and 4 am
   schedule { 'everyday':
     period => daily,
-    range  => "2-4",
+    range  => '2-4',
     repeat => 1
   }
 
@@ -22,5 +22,5 @@ $timestamp = strftime("%Y%m%d%H%M")
     name     => "/home/backhub/${timestamp}_${title}_${save_as}",
     schedule => $run,
   }
-  
+
 }

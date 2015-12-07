@@ -2,10 +2,11 @@
 #
 class backhub::config {
 
-# Allow clear text password logins, to be able to use the backhub account to push files to backhub server
-  augeas { "sshd_config":
+# Allow clear text password logins, to be able to use the backhub account to
+# push files to backhub server
+  augeas { 'sshd_config':
     changes => [
-      "set /files/etc/ssh/sshd_config/PasswordAuthentication yes",
+      'set /files/etc/ssh/sshd_config/PasswordAuthentication yes',
     ],
   }
 
@@ -15,5 +16,5 @@ class backhub::config {
     rotate       => 5,
     rotate_every => 'week',
   }
-  
+
 }

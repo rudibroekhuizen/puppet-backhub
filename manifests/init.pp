@@ -48,8 +48,8 @@ class backhub (
 # Other configurations
   class { 'backhub::config':
   }
-  
-# Create scp commands  
+
+# Create scp commands
   class { 'backhub::scp':
   }
 
