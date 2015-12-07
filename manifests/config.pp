@@ -10,6 +10,13 @@ class backhub::config {
     ],
   }
 
+# Define schedule: run everynight between 2 and 4 am
+  schedule { 'everyday':
+    period => daily,
+    range  => '2-4',
+    repeat => 1
+  }
+
 # Setup logrotate using module yo61/logrotate
   logrotate::rule { 'backhub':
     path         => '/home/backhub/*',
