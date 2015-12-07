@@ -32,8 +32,8 @@ The main goal of this module is to pull configuration files from devices. It use
 
 ### Setup Requirements **OPTIONAL**
 
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
+yo61/logrotate
+geoffwilliams/scp
 
 ### Beginning with backhub
 
