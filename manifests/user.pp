@@ -39,13 +39,4 @@ class backhub::user {
     content => $backhub::id_rsa,
   }
 
-# Add private key to root account to be able to scp to devices with scp
-# puppet module
-  file { '/root/.ssh/id_rsa':
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0600',
-    content => $backhub::id_rsa,
-  }
-
 }
