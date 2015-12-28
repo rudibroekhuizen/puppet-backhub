@@ -22,6 +22,7 @@ class backhub::config {
     path         => '/home/backhub/*',
     rotate       => 5,
     rotate_every => 'week',
+    shred        => true
   }
 
 }
