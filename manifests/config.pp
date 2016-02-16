@@ -17,12 +17,9 @@ class backhub::config {
     repeat => 1
   }
 
-# Setup logrotate using module yo61/logrotate
-  logrotate::rule { 'backhub':
-    path         => '/home/backhub/*',
-    rotate       => 5,
-    rotate_every => 'week',
-    shred        => true
+# Delete older configs
+  tidy { "/home/backhub":
+    age => "4w",
   }
 
 }
