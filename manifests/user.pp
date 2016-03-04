@@ -18,7 +18,7 @@ class backhub::user {
     ensure  => directory,
     owner   => 'backhub',
     group   => 'backhub',
-    mode    => '0700',
+    mode    => '0755',
     require => Group['backhub'],
   }
 
